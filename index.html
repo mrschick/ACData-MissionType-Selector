@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ACData MissionType Selector</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<script src="functions.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<h1>Falcon BMS 4.35 ACdata MissionType Selector script:</h1><br>
+		<table>
+			<tr>
+				<td class="box"><!-- Input line -->
+					<u><b>Import available mission types from existing "misTypeCapability" line:</b></u><br><br>
+					<textarea id="input"></textarea><br><br>
+					<button onclick="clearText('input');">Clear input field</button> <button onclick="importMissionTypes('input');">Import</button>
+				</td>
+				<td rowspan="2" class="box"><!-- Missiontype checkboxes -->
+					<table class="subbox">
+						<tr><td><button onclick="select(ALL, 1);">Select all</button></td><td><button onclick="select(AA, 1);">Select all AA</button></td><td><button onclick="select(AG, 1);">Select all AG</button></td></tr>
+						<tr><td><button onclick="select(ALL, 0);">Clear all</button></td><td><button onclick="select(AA, 0);">Clear all AA</button></td><td><button onclick="select(AG, 0);">Clear all AG</button></td></tr>
+					</table><br>
+					<script type="text/javascript">writeCheckboxes();</script>
+				</td>
+			</tr>
+			<tr>
+				<td class="box"><!-- Output textfield -->
+					<u><b>Export selected options to a new "misTypeCapability" line:</b></u><br><br>
+					<button onclick="exportMissionTypes('output');">Export</button><br><br>
+					<textarea id="output"></textarea><br><br>
+					<button onclick="clearText('output');">Clear output field</button> <button onclick="copyClip('output');">Copy to clipboard</button>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
