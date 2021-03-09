@@ -93,11 +93,13 @@ function exportMissionTypes(outputId)
 	}
 
 	document.getElementById(outputId).innerHTML = output;
+	document.getElementById(outputId).value = output;
 }
 
 function clearText(id)
 {
 	document.getElementById(id).innerHTML = "";
+	document.getElementById(id).value = "";
 }
 
 function copyClip(id)
