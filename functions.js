@@ -39,16 +39,26 @@ var type = [
 	"Patrol",
 	"Recce Patrol",
 	"Abort",
-	"Training"
+	"Training",
+	"Relocate",
+	"DUMMY 02",
+	"DUMMY 03",
+	"DUMMY 04",
+	"DUMMY 05",
+	"DUMMY 06",
+	"DUMMY 07",
+	"DUMMY 08",
+	"DUMMY 09",
+	"Other"
 ];
 
-var ALL = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41];
+var ALL = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
 var AA = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 var AG = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
 
 function select(arr, mode) // mode 0 to unselect, 1 to select
 {
-	for(i = 1; i <= 41; i++)
+	for(i = 1; i <= 50; i++)
 	{
 		if(arr.includes(i))
 		{
@@ -62,7 +72,7 @@ function select(arr, mode) // mode 0 to unselect, 1 to select
 
 function writeCheckboxes()
 {
-	for(i = 1; i <= 41; i++)
+	for(i = 1; i <= 50; i++)
 		document.write('<input type="checkbox" id="'+i+'"> '+i+': '+type[i-1]+'<br>');
 }
 
@@ -71,7 +81,7 @@ function importMissionTypes(inputId)
 	input = document.getElementById(inputId).value;
 	arr = input.split(" ");
 
-	for(i = 1; i <= 41; i++)
+	for(i = 1; i <= 50; i++)
 	{
 		if(arr[i+1] == "0")
 			document.getElementById(i).checked = false;
@@ -82,9 +92,9 @@ function importMissionTypes(inputId)
 
 function exportMissionTypes(outputId)
 {
-	output = "misTypeCapability 41";
+	output = "misTypeCapability 50";
 
-	for(i = 1; i <= 41; i++)
+	for(i = 1; i <= 50; i++)
 	{
 		if(document.getElementById(i).checked)
 			output = output + " 100";
